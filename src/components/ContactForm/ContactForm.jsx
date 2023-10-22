@@ -10,13 +10,10 @@ state = {
 
 handleSubmit = event => {
 event.preventDefault();
-
 const contact = {
 name: this.state.name,
 number: this.state.number,
-//id: this.state.id,
 };
-//this.props.onSubmit({name, number});
 this.props.handleAddContact(contact);
 }
 
@@ -32,18 +29,17 @@ handleInputChange = event => {
 
 render () {
     return (
-               <form className={css.phonebook_cont} onSubmit={this.handleSubmit}>
+               <form className={css.contact_form_cont} onSubmit={this.handleSubmit}>
                <label>
                 <p>Name</p>
-                <input className={css.phonebook_inp}
+                <input className={css.contact_form_inp}
                 type="text"
                 name="name"
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
                 onChange={this.handleInputChange}
-                //value={this.state.name}
-              />
+                />
               </label>
               
               <label>
@@ -57,16 +53,15 @@ render () {
               onChange={this.handleInputChange}
               />
               </label>
-              <button type="submit" className={css.phonebook_btn}>Add contact</button>
+              <button type="submit" className={css.contact_form_btn}>Add contact</button>
               </form>  
             )
-}
+    }
 }
 
 ContactForm.propTypes = {
   name: PropTypes.string,
   number: PropTypes.string,
 }
-
 
 export default ContactForm;

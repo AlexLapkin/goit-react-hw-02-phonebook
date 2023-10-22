@@ -1,4 +1,4 @@
-.phonebook_cont {
+.contact_form_cont {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -7,12 +7,12 @@
     border: 1px solid black;
 }
 
-.phonebook_inp {
+.contact_form_inp {
    width: 200px;
    margin-bottom: 20px;
 }
 
-.phonebook_btn {
+.contact_form_btn {
     width: 100px;
     margin-top: 20px;
 }

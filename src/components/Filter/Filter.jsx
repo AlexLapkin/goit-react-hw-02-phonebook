@@ -6,6 +6,7 @@ const Filter = ({filter, changeInputFilter}) => {
         <label>
         <p>Find contacts by name</p>
         <input
+                className={css.filter_inp}
                 type="text"
                 name={filter}
                 onChange={changeInputFilter}
