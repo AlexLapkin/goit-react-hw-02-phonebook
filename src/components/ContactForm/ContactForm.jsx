@@ -25,6 +25,7 @@ handleInputChange = event => {
         [name]: value,
         [number]: value,
     })
+   
 }
 
 render () {
@@ -44,7 +45,7 @@ render () {
               
               <label>
                 <p>Number</p>
-              <input
+              <input className={css.contact_form_inp}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
