@@ -1,29 +1,8 @@
 import { Component } from 'react';
-import css from './Phonebook.module.css';
+import css from './ContactForm.module.css';
 import PropTypes from "prop-types";
 
-//const Phonebook = ({  }) => {
-//    return (
-//        <div>
-//        <h2>Phonebook</h2>
-//        <div className={css.phonebook_cont}>
-//        <p>Name</p>
-//        <input className={css.phonebook_inp}
-//        type="text"
-//        name="name"
-//        
-//        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//        required
-//      />
-//      <button className={css.phonebook_btn}>Add contact</button>
-//      </div>
-//      </div>  
-//    )
-//}
-
-
-class Phonebook extends Component {
+class ContactForm extends Component {
 state = {
  name: '',
  number: '',   
@@ -84,4 +63,10 @@ render () {
 }
 }
 
-export default Phonebook;
+ContactForm.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+}
+
+
+export default ContactForm;

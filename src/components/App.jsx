@@ -1,6 +1,6 @@
 import { Component } from "react";
-import Phonebook from "./Phonebook/Phonebook";
-import Contacts from "./Contacts/Contacts";
+import ContactForm from "./ContactForm/ContactForm";
+import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
 import {nanoid} from 'nanoid';
 
@@ -8,25 +8,31 @@ export class App extends Component {
    state = {
    contacts: [],
    filter: '',
-   name: '',
-   number: '',
-   }
+  }
 
    handleAddContact = contact => {
-    const finalContacts = {
+     const finalContacts = {
      ...contact,
     id: nanoid(),
     };
     
+    const hasRepeateContact = this.state.contacts.some(
+      item => item.name === contact.name
+      )
+              
+     if (hasRepeateContact) {
+     alert(`${contact.name} is already in contacts`)
+     }
+    else {
     this.setState(prevState => ({
         contacts: [...prevState.contacts, finalContacts],
     }));
  }
+}
 
     changeInputFilter = event => {
         this.setState({filter: event.target.value});
     }
-
 
     findContactsByName = () => {
         const {filter, contacts} = this.state;
@@ -37,14 +43,13 @@ export class App extends Component {
 
    render() {
     //const { filter } = this.state;
-    //console.log(filter)
     return (
     <div>
     <h1>Phonebook</h1>        
-    < Phonebook handleAddContact={this.handleAddContact}/>
+    < ContactForm handleAddContact={this.handleAddContact}/>
     <h2>Contacts</h2>
     < Filter filter={this.state.filter} changeInputFilter={this.changeInputFilter} />
-    < Contacts  contacts={this.findContactsByName()}/>
+    < ContactList  contacts={this.findContactsByName()}/>
     </div>
     )
    }

@@ -1,7 +1,7 @@
-import css from './Contacts.module.css';
+import css from './ContactList.module.css'
 import PropTypes from "prop-types";
 
-const Contacts = ({contacts}) => {
+const ContactList = ({contacts}) => {
         return (
         <ul className={css.contacts_cont}>
           {contacts.map(({id, name, number}) => (
@@ -12,4 +12,10 @@ const Contacts = ({contacts}) => {
     )
 }
 
-export default Contacts;
+ContactList.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  number: PropTypes.string,
+}
+
+export default ContactList;
