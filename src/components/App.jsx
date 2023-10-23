@@ -17,7 +17,7 @@ export class App extends Component {
     };
     
     const hasRepeateContact = this.state.contacts.some(
-      item => item.name === contact.name
+      item => item.name.toLowerCase() === contact.name.toLowerCase()
       )
               
      if (hasRepeateContact) {

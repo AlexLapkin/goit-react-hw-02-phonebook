@@ -17,9 +17,8 @@ const ContactList = ({contacts, handleDeleteContact}) => {
 }
 
 ContactList.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  number: PropTypes.string,
-}
+  contacts: PropTypes.array,
+  handleDeleteContact: PropTypes.func,
+}  
 
 export default ContactList;
