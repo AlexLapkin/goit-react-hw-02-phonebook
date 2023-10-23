@@ -21,7 +21,7 @@ export class App extends Component {
       )
               
      if (hasRepeateContact) {
-     alert(`${contact.name} is already in contacts`)
+     alert(`${contact.name} is already in contacts!`)
      }
     else {
     this.setState(prevState => ({
